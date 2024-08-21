@@ -119,6 +119,10 @@ def get_all_movies():
     # get all movie titles and their imdb id 
     return movies[['title', 'imdbId']].to_dict(orient='records')
 
+def get_movie_by_title(title):
+    # get all movie titles and their imdb id 
+    return movies[movies['title'] == title].to_dict(orient='records')
+
 # # Define the user ID, movie title, and the number of recommendations to generate
 # user_id = 2 # User ID for which recommendations will be generated
 # title = 'Toy Story (1995)' # Movie title based on which recommendations will be generated
