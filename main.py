@@ -17,9 +17,6 @@ def read_root():
 
 @app.get("/recommendations/{title}/{user_id}")
 def read_item(title: str, user_id: int):
-    #capitalize the first letter of each word in the title
-    # title = title.title()
-    # title = title + " (" + str(year) + ")"
     recommendations = hybrid_recommendations(user_id, title, 10)
     return {"recommendations": recommendations.to_list()}
 
